@@ -1,0 +1,27 @@
+
+// Apply the java plugin to add support for Java
+
+repositories {
+    jcenter()
+}
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'Main'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}
+
+run {
+    standardInput = System.in
+}
+
+dependencies {
+    testCompile('junit:junit:4.12')
+    compile 'junit:junit:4.12'
+}
